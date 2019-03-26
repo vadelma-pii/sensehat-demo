@@ -14,7 +14,7 @@
 
 import atexit, sys, getopt
 from sense_hat import SenseHat
-# Määritellään värejä. Käytetään Pythonin sa
+# Määritellään värejä. Käytetään Pythonin sanakirjarakennetta.
 cd={
   "R":(255,0,0),
   "G":(0,255,0),
@@ -41,10 +41,18 @@ def clearscreen():
 # Rekisteröidään näytöntyhjennysfunktio suoritettavaksi poistuessa.
 atexit.register(clearscreen)
 
+# Määritellään main-funktio. Tätä ei yleensä Pythonissa tarvita, mutta se
+# selkiyttää getoptin toimintaa: ensimmäinen argumentti eli ohjelman oma nimi
+# siivotaan tässä pois kuljeksimasta.
 def main(argv):
+  # Asetetaan oletusarvot. Näytetään tyhjä teksti punaisilla merkeillä mustalla pohjalla.
   displayString = ''
   tc = "R"
   bc = "K"
+  # getoptille annetaan kirjaimet, jotka hyväksytään. Jos kirjaimen perässä on kaksoispiste,
+  # siihen liittyy lisäargumentti.
+  # Jos optioiden käsittelyssä tapahtuu virhe, näytetään ohjeteksti ja poistutaan virhekoodin kera.
+  # TODO: tulostetaan virheteksti standard erroriin.
   try:
     opts, args = getopt.getopt(argv, "ht:f:b:")
   except getopt.GetoptError:
@@ -61,8 +69,11 @@ def main(argv):
     elif opt == '-b':
       bc = arg
 
+  # Päättymätön silmukka, katkeaa vasta kun ohjelma keskeytetään.
   while True:
     sense.show_message(displayString, text_colour=cd[tc], back_colour=cd[bc])
 
+# Tässä siivotaan komentoriviargumenteista ensimmäinen eli ohjelman oma nimi
+# ja käynnistetään main-funktio.
 if __name__ == "__main__":
   main(sys.argv[1:])
