@@ -8,6 +8,7 @@
 # 
 # (C) Vadelma Pii 2019. Lisenssi GPLv3, mutta triviaaleja osia saa
 # käyttää mallina missä tahansa laillisessa tarkoituksessa.
+# 
 # Näyttää komentorivillä annetun tekstin SenseHATin näytöllä
 # keskeytetään painamalla Ctrl-C. Tyhjentää näytön poistuttaessa.
 
