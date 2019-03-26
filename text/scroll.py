@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # (C) Vadelma Pii 2019. Licensed under GPLv3, with the exception that
 # use of trivial parts as templates is explicitly allowed for any
-# purpose.
+# legal purpose.
 #
 # Displays command line argument on SenseHAT until interrupted. Clears 
 # screen at exit.
 # 
 # (C) Vadelma Pii 2019. Lisenssi GPLv3, mutta triviaaleja osia saa
-# käyttää mallina missä tahansa tarkoituksessa.
+# käyttää mallina missä tahansa laillisessa tarkoituksessa.
 # Näyttää komentorivillä annetun tekstin SenseHATin näytöllä
 # keskeytetään painamalla Ctrl-C. Tyhjentää näytön poistuttaessa.
 
